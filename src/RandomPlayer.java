@@ -21,12 +21,16 @@ public class RandomPlayer {
         int randomRow;
 
         do {
+            //the goal is that after the random players turn the smallest even number will be left on the board
+            //this definitly involves something that checks if the number can be divided by two And something that can count the whole board
             randomRow = (int) (Math.random() * 10);
             randomCol = (int) (Math.random() * 10);
         } while(!gameBoard[randomRow][randomCol].isAlive);
 
         myMove = new Point(randomRow,randomCol);
+        // if gameBoard randomrow+randomco/2 {}
         return myMove;
+
     }
 
 }
