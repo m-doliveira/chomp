@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.*;
+import java.util.ArrayList;
 
 //Keyboard and Mouse
 import java.awt.event.*;
@@ -121,10 +122,27 @@ public class Chomp implements Runnable, MouseListener {
         }
     }
     public void threelist(){
+       ArrayList<int[]> boards = new ArrayList<int[]>();
+        System.out.println("possible boards:");
         for (int i = 1; i<4; i = i+1) {
             for (int m = 0;m<=i; m = m+1) {
                 for (int o = 0; o<=m; o = o+1) {
                     System.out.println(i+","+m+","+o);
+                   int[] b3y3 = {i,m,o};
+                   boards.add(b3y3);
+                    for (int l = i; l<4; l = l+1) {
+                        for (int k = m;k<=l; k = k+1) {
+                            for (int r = o; r<=k; r = r+1) {
+                                System.out.println("within boards");
+                                System.out.println(l+","+k+","+r);
+                                int[] w3by3 = {l,k,r};
+                                boards.add(b3y3);
+
+                            }}}
+
+                   //for (int p=0; p<=1; p=p-1){
+                        //System.out.println("then:");
+                    //System.out.println(i+","+m+","+o);}
                    // if (i>=m && m>=o){
                        // System.out.println(i+","+m+","+o);
                     //}
