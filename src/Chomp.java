@@ -114,6 +114,7 @@ public class Chomp implements Runnable, MouseListener {
 
     public void run() {
         threelist();
+        possibleboards();
         //for the moment we will loop things forever.
         while (true) {
             render();  // paint the graphics
@@ -123,32 +124,31 @@ public class Chomp implements Runnable, MouseListener {
     }
     public void threelist(){
        ArrayList<int[]> boards = new ArrayList<int[]>();
-        System.out.println("possible boards:");
+        System.out.println("3x3 boards:");
         for (int i = 1; i<4; i = i+1) {
             for (int m = 0;m<=i; m = m+1) {
                 for (int o = 0; o<=m; o = o+1) {
-                    System.out.println(i+","+m+","+o);
+                    System.out.println(i+""+m+""+o);
                    int[] b3y3 = {i,m,o};
                    boards.add(b3y3);
-                    for (int l = i; l<4; l = l+1) {
-                        for (int k = m;k<=l; k = k+1) {
-                            for (int r = o; r<=k; r = r+1) {
-                                System.out.println("within boards");
-                                System.out.println(l+","+k+","+r);
-                                int[] w3by3 = {l,k,r};
-                                boards.add(b3y3);
-
-                            }}}
-
-                   //for (int p=0; p<=1; p=p-1){
-                        //System.out.println("then:");
-                    //System.out.println(i+","+m+","+o);}
-                   // if (i>=m && m>=o){
-                       // System.out.println(i+","+m+","+o);
-                    //}
                 }}}
+        System.out.println("without nested loops");
+        for (int c=3;c>-1;c=c-1){
+            int a=3;
+            int b=3;
+            System.out.println(a+""+b+""+c);
+        }
+        for (int b=2;b>-1;b=b-1){
+            int a=3;
+            int c=b;
+            System.out.println(a+""+b+""+c);
+        }
+
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
     }//
+    public void possibleboards(){
+
+    }
 
 
 
