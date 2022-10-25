@@ -19,6 +19,7 @@ public class Chomp implements Runnable, MouseListener {
     //You can set their initial values too
 
     //Sets the width and height of the program window
+    ArrayList<int[]> boards = new ArrayList<int[]>();
     final int WIDTH = 1000;
     final int HEIGHT = 800;
 
@@ -123,7 +124,6 @@ public class Chomp implements Runnable, MouseListener {
         }
     }
     public void threelist(){
-       ArrayList<int[]> boards = new ArrayList<int[]>();
         System.out.println("3x3 boards:");
         for (int i = 1; i<4; i = i+1) {
             for (int m = 0;m<=i; m = m+1) {
@@ -143,11 +143,17 @@ public class Chomp implements Runnable, MouseListener {
             int c=b;
             System.out.println(a+""+b+""+c);
         }
+        for (int a=2;a>-1;a=a-1){
+            int b=a;
+            System.out.println(a+""+b+""+0);
+        }
 
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
     }//
     public void possibleboards(){
-
+        boards.get(0);
+//win boards 110,111,300,200
+//lose boards: 210,100,221
     }
 
 
