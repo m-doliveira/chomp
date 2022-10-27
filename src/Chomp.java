@@ -115,7 +115,7 @@ public class Chomp implements Runnable, MouseListener {
 
     public void run() {
         threelist();
-        possibleboards();
+        //possibleboards();
         //for the moment we will loop things forever.
         while (true) {
             render();  // paint the graphics
@@ -131,48 +131,48 @@ public class Chomp implements Runnable, MouseListener {
                     System.out.println(i+""+m+""+o);
                    int[] b3y3 = {i,m,o};
                    boards.add(b3y3);
+                   possibleboards(i,m,o);
                 }}}
-        System.out.println("without nested loops");
-        for (int c=3;c>-1;c=c-1){
-            int a=3;
-            int b=3;
-            System.out.println(a+""+b+""+c);
-        }
-        for (int b=2;b>-1;b=b-1){
-            int a=3;
-            int c=b;
-            System.out.println(a+""+b+""+c);
-        }
-        for (int a=2;a>-1;a=a-1){
-            int b=a;
-            int c=0;
-            System.out.println(a+""+b+""+0);
-        }
+//        System.out.println("copy of possible boards");
+//        for (int c=3;c>-1;c=c-1){
+//            int a=3;
+//            int b=3;
+//            System.out.println(a+""+b+""+c);
+//        }
+//        for (int b=2;b>-1;b=b-1){
+//            int a=3;
+//            int c=b;
+//            System.out.println(a+""+b+""+c);
+//        }
+//        for (int a=2;a>-1;a=a-1){
+//            int b=a;
+//            int c=0;
+//            System.out.println(a+""+b+""+0);
+//        }
 
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
     }//
-    public void possibleboards(){
+    public void possibleboards(int A, int B, int C) {
         boards.get(0);
+        // lose boards 3x3: 100,210,220,211,311
         //i have i,m,o stored in this arrayList and I want to move those numbers to these loops
         //for this method
-        for (int c=3;c>-1;c=c-1){
-            int a=3;
-            int b=3;
-            System.out.println(a+""+b+""+c);
+        System.out.println("");
+        for (int c = 3; c > -1; c = c - 1) {
+            int a = 3;
+            int b = 3;
+            System.out.println(a + "" + b + "" + c);
         }
-        for (int b=2;b>-1;b=b-1){
-            int a=3;
-            int c=b;
-            System.out.println(a+""+b+""+c);
+        for (int b = 2; b > -1; b = b - 1) {
+            int a = 3;
+            int c = b;
+            System.out.println(a + "" + b + "" + c);
         }
-        for (int a=2;a>-1;a=a-1){
-            int b=a;
-            int c=0;
-            System.out.println(a+""+b+""+c);
+        for (int a = 2; a > -1; a = a - 1) {
+            int b = a;
+            int c = 0;
+            System.out.println(a + "" + b + "" + c);
         }
-
-//win boards 110,111,300,200
-//lose boards: 210,100,221
     }
 
 
