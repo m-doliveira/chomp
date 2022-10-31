@@ -153,22 +153,21 @@ public class Chomp implements Runnable, MouseListener {
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
     }//
     public void possibleboards(int A, int B, int C) {
-        boards.get(0);
         // lose boards 3x3: 100,210,220,211,311
         //i have i,m,o stored in this arrayList and I want to move those numbers to these loops
         //for this method
-        System.out.println("");
-        for (int c = 3; c > -1; c = c - 1) {
+        System.out.println("within boards");
+        for (int c = A; c > -1; c = c - 1) {
             int a = 3;
             int b = 3;
             System.out.println(a + "" + b + "" + c);
         }
-        for (int b = 2; b > -1; b = b - 1) {
+        for (int b = B; b > -1; b = b - 1) {
             int a = 3;
             int c = b;
             System.out.println(a + "" + b + "" + c);
         }
-        for (int a = 2; a > -1; a = a - 1) {
+        for (int a = C; a > -1; a = a - 1) {
             int b = a;
             int c = 0;
             System.out.println(a + "" + b + "" + c);
