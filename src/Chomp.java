@@ -128,7 +128,8 @@ public class Chomp implements Runnable, MouseListener {
         for (int i = 1; i<4; i = i+1) {
             for (int m = 0;m<=i; m = m+1) {
                 for (int o = 0; o<=m; o = o+1) {
-                    System.out.println(i+""+m+""+o);
+                    System.out.println("");
+                    System.out.println("board:"+i+""+m+""+o);
                    int[] b3y3 = {i,m,o};
                    boards.add(b3y3);
                    possibleboards(i,m,o);
@@ -156,21 +157,28 @@ public class Chomp implements Runnable, MouseListener {
         // lose boards 3x3: 100,210,220,211,311
         //i have i,m,o stored in this arrayList and I want to move those numbers to these loops
         //for this method
-        System.out.println("within boards");
-        for (int c = A; c > -1; c = c - 1) {
-            int a = 3;
-            int b = 3;
+        System.out.println("within board");
+        for (int c = C-1; c > -1; c = c - 1) {
+            int a = A;
+            int b = B;
             System.out.println(a + "" + b + "" + c);
         }
-        for (int b = B; b > -1; b = b - 1) {
-            int a = 3;
-            int c = b;
+        for (int b = B-1;b>-1; b = b - 1) {
+            int a = A;
+            int c=C;
+            if ( c> b) {
+                 c = b;}
             System.out.println(a + "" + b + "" + c);
         }
-        for (int a = C; a > -1; a = a - 1) {
-            int b = a;
-            int c = 0;
+        for (int a = A-1; a > 0; a = a - 1) {
+            int b = B;
+            if ( b> a) {
+                b = a;}
+            int c = C;
+            if ( c> b) {
+                c = b;}
             System.out.println(a + "" + b + "" + c);
+           // System.out.println(a + "" + b + "" + 0);
         }
     }
 
