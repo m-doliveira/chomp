@@ -134,22 +134,7 @@ public class Chomp implements Runnable, MouseListener {
                    boards.add(b3y3);
                    possibleboards(i,m,o);
                 }}}
-//        System.out.println("copy of possible boards");
-//        for (int c=3;c>-1;c=c-1){
-//            int a=3;
-//            int b=3;
-//            System.out.println(a+""+b+""+c);
-//        }
-//        for (int b=2;b>-1;b=b-1){
-//            int a=3;
-//            int c=b;
-//            System.out.println(a+""+b+""+c);
-//        }
-//        for (int a=2;a>-1;a=a-1){
-//            int b=a;
-//            int c=0;
-//            System.out.println(a+""+b+""+0);
-//        }
+//
 
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
     }//
