@@ -20,7 +20,7 @@ public class Chomp implements Runnable, MouseListener {
 
     //Sets the width and height of the program window
     ArrayList<int[]> boards = new ArrayList<int[]>();
-    ArrayList<Integer> loseBoards = new ArrayList<Integer>();
+    ArrayList<Board> loseBoards = new ArrayList<Board>();
     final int WIDTH = 1000;
     final int HEIGHT = 800;
 
@@ -136,13 +136,15 @@ public class Chomp implements Runnable, MouseListener {
                    possibleboards(i,m,o);
                 }}}
 //
-        loseBoards.add(100);
-        loseBoards.add(210);
-        loseBoards.add(220);
-        loseBoards.add(211);
-        loseBoards.add(311);
+        loseBoards.add(new Board(1,0,0));
+        loseBoards.add(new Board(2,1,0));
+        loseBoards.add(new Board(2,2,0));
+        loseBoards.add(new Board(2,1,1));
+        loseBoards.add(new Board(3,1,1));
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
-    }//
+    //loseBoards.get(0).B how can I use this
+    }
+
     public void possibleboards(int A, int B, int C) {
         // lose boards 3x3: 100,210,220,211,311
         System.out.println("within board");
@@ -150,6 +152,9 @@ public class Chomp implements Runnable, MouseListener {
             int a = A;
             int b = B;
             System.out.println(a + "" + b + "" + c);
+            if ( c==0 && a==1&& b==0) {
+                System.out.println("(lose)");
+            }
         }
         for (int b = B-1;b>-1; b = b - 1) {
             int a = A;
@@ -157,6 +162,9 @@ public class Chomp implements Runnable, MouseListener {
             if ( c> b) {
                  c = b;}
             System.out.println(a + "" + b + "" + c);
+            if ( c==0 && a==1&&  b==0) {
+                System.out.println("(lose)");
+            }
         }
         for (int a = A-1; a > 0; a = a - 1) {
             int b = B;
