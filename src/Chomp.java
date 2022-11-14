@@ -152,8 +152,10 @@ public class Chomp implements Runnable, MouseListener {
             int a = A;
             int b = B;
             System.out.println(a + "" + b + "" + c);
-            if ( c==0 && a==1&& b==0) {
-                System.out.println("(lose)");
+            for(int l=0; l<loseBoards.size();l=l+1){
+                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
+                    System.out.println("(lose)");
+                }
             }
         }
         for (int b = B-1;b>-1; b = b - 1) {
@@ -165,6 +167,11 @@ public class Chomp implements Runnable, MouseListener {
             if ( c==0 && a==1&&  b==0) {
                 System.out.println("(lose)");
             }
+            for(int l=0; l<loseBoards.size();l=l+1){
+                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
+                    System.out.println("(lose)");
+                }
+            }
         }
         for (int a = A-1; a > 0; a = a - 1) {
             int b = B;
@@ -174,8 +181,10 @@ public class Chomp implements Runnable, MouseListener {
             if ( c> b) {
                 c = b;}
             System.out.println(a + "" + b + "" + c);
-            if ( c==0 && a==1&& b==0) {
-                System.out.println("(lose)");
+            for(int l=0; l<loseBoards.size();l=l+1){
+                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
+                    System.out.println("(lose)");
+                }
             }
         }
     }
