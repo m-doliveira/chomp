@@ -125,22 +125,24 @@ public class Chomp implements Runnable, MouseListener {
         }
     }
     public void threelist(){
-        System.out.println("3x3 boards:");
-        for (int i = 1; i<4; i = i+1) {
-            for (int m = 0;m<=i; m = m+1) {
-                for (int o = 0; o<=m; o = o+1) {
-                    System.out.println("");
-                    System.out.println("board:"+i+""+m+""+o);
-                   int[] b3y3 = {i,m,o};
-                   boards.add(b3y3);
-                   possibleboards(i,m,o);
-                }}}
-//
         loseBoards.add(new Board(1,0,0));
         loseBoards.add(new Board(2,1,0));
         loseBoards.add(new Board(2,2,0));
         loseBoards.add(new Board(2,1,1));
         loseBoards.add(new Board(3,1,1));
+        System.out.println("3x3 boards:");
+        for (int i = 1; i<4; i = i+1) {
+            for (int m = 0;m<=i; m = m+1) {
+                for (int o = 0; o<=m; o = o+1) {
+                    System.out.println("");
+                    System.out.println("board:"+i+""+m+""+o); //add +return result
+                   int[] b3y3 = {i,m,o};
+                   boards.add(b3y3);
+                   possibleboards(i,m,o);
+                }
+            }
+        }
+//
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
 
     }
@@ -154,6 +156,7 @@ public class Chomp implements Runnable, MouseListener {
             System.out.println(a + "" + b + "" + c);
             for(int l=0; l<loseBoards.size();l=l+1){
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
+
                     System.out.println("(lose)");
 
                 }
@@ -165,10 +168,11 @@ public class Chomp implements Runnable, MouseListener {
             if ( c> b) {
                  c = b;}
             System.out.println(a + "" + b + "" + c);
-            if ( c==0 && a==1&&  b==0) {
-                System.out.println("(lose)");
-            }
+//            if ( c==0 && a==1&&  b==0) {
+//                System.out.println("(lose)");
+//            }
             for(int l=0; l<loseBoards.size();l=l+1){
+
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
                     System.out.println("(lose)");
                 }
