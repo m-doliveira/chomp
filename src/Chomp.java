@@ -142,7 +142,7 @@ public class Chomp implements Runnable, MouseListener {
         loseBoards.add(new Board(2,1,1));
         loseBoards.add(new Board(3,1,1));
 //to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
-    //loseBoards.get(0).B how can I use this
+
     }
 
     public void possibleboards(int A, int B, int C) {
@@ -155,6 +155,7 @@ public class Chomp implements Runnable, MouseListener {
             for(int l=0; l<loseBoards.size();l=l+1){
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
                     System.out.println("(lose)");
+
                 }
             }
         }
