@@ -2,7 +2,7 @@ public class Board {
     public int A;
     public int B;
     public int C;
-    public boolean result = true;
+    public boolean result =false;
 
     public Board(int pa, int pb, int pc){
         A=pa;
@@ -10,5 +10,9 @@ public class Board {
         C=pc;
     }
 
-    //if( result==true){}
+    //                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
+    //
+    //                    System.out.println("(win)");
+    //
+
 }

@@ -126,10 +126,10 @@ public class Chomp implements Runnable, MouseListener {
     }
     public void threelist(){
         loseBoards.add(new Board(1,0,0));
-        loseBoards.add(new Board(2,1,0));
-        loseBoards.add(new Board(2,2,0));
-        loseBoards.add(new Board(2,1,1));
-        loseBoards.add(new Board(3,1,1));
+//        loseBoards.add(new Board(2,1,0));
+//        loseBoards.add(new Board(2,2,1));
+//        loseBoards.add(new Board(3,2,0));
+//        loseBoards.add(new Board(3,1,1));
         System.out.println("3x3 boards:");
         for (int i = 1; i<4; i = i+1) {
             for (int m = 0;m<=i; m = m+1) {
@@ -157,7 +157,7 @@ public class Chomp implements Runnable, MouseListener {
             for(int l=0; l<loseBoards.size();l=l+1){
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
 
-                    System.out.println("(lose)");
+                    System.out.println("(win)");
 
                 }
             }
@@ -168,13 +168,11 @@ public class Chomp implements Runnable, MouseListener {
             if ( c> b) {
                  c = b;}
             System.out.println(a + "" + b + "" + c);
-//            if ( c==0 && a==1&&  b==0) {
-//                System.out.println("(lose)");
-//            }
+//
             for(int l=0; l<loseBoards.size();l=l+1){
 
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
-                    System.out.println("(lose)");
+                    System.out.println("(win)");
                 }
             }
         }
@@ -188,9 +186,13 @@ public class Chomp implements Runnable, MouseListener {
             System.out.println(a + "" + b + "" + c);
             for(int l=0; l<loseBoards.size();l=l+1){
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
-                    System.out.println("(lose)");
+                    System.out.println("(win)");
+                }
+                if ( loseBoards.get(l).A<a && loseBoards.get(l).B<b&&loseBoards.get(l).C<c||loseBoards.get(l).A>a && loseBoards.get(l).B>b&&loseBoards.get(l).C>c) {
+                   // loseBoards.add(new Board(a,b,c));
                 }
             }
+            System.out.println("loseboards"+loseBoards);
         }
     }
 
