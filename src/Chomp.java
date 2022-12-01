@@ -189,7 +189,7 @@ public class Chomp implements Runnable, MouseListener {
                     System.out.println("(win)");
                 }
                 if ( loseBoards.get(l).A<a && loseBoards.get(l).B<b&&loseBoards.get(l).C<c||loseBoards.get(l).A>a && loseBoards.get(l).B>b&&loseBoards.get(l).C>c) {
-                   // loseBoards.add(new Board(a,b,c));
+                   /// loseBoards.add(new Board(a,b,c));
                 }
             }
             System.out.println("loseboards"+loseBoards);
