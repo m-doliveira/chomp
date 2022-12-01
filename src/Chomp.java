@@ -116,7 +116,6 @@ public class Chomp implements Runnable, MouseListener {
 
     public void run() {
         threelist();
-        //possibleboards();
         //for the moment we will loop things forever.
         while (true) {
             render();  // paint the graphics
@@ -156,26 +155,20 @@ public class Chomp implements Runnable, MouseListener {
             System.out.println(a + "" + b + "" + c);
             for(int l=0; l<loseBoards.size();l=l+1){
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
-
                     System.out.println("(win)");
+                }}}
 
-                }
-            }
-        }
         for (int b = B-1;b>-1; b = b - 1) {
             int a = A;
             int c=C;
             if ( c> b) {
                  c = b;}
             System.out.println(a + "" + b + "" + c);
-//
             for(int l=0; l<loseBoards.size();l=l+1){
-
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
                     System.out.println("(win)");
-                }
-            }
-        }
+                }}}
+
         for (int a = A-1; a > 0; a = a - 1) {
             int b = B;
             if ( b> a) {
@@ -184,15 +177,15 @@ public class Chomp implements Runnable, MouseListener {
             if ( c> b) {
                 c = b;}
             System.out.println(a + "" + b + "" + c);
-            for(int l=0; l<loseBoards.size();l=l+1){
-                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
+            for(int l=0; l<loseBoards.size();l=l+1) {
+                if (loseBoards.get(l).A == a && loseBoards.get(l).B == b && loseBoards.get(l).C == c) {
                     System.out.println("(win)");
                 }
-                if ( loseBoards.get(l).A<a && loseBoards.get(l).B<b&&loseBoards.get(l).C<c||loseBoards.get(l).A>a && loseBoards.get(l).B>b&&loseBoards.get(l).C>c) {
-                   /// loseBoards.add(new Board(a,b,c));
-                }
-            }
-            System.out.println("loseboards"+loseBoards);
+                if (loseBoards.get(l).A < a && loseBoards.get(l).B < b && loseBoards.get(l).C < c || loseBoards.get(l).A > a && loseBoards.get(l).B > b && loseBoards.get(l).C > c) {
+                    loseBoards.add(new Board(a, b, c));
+                }}}
+        for(int k=0; k>loseBoards.size();k=k+1){
+            System.out.println(loseBoards.get(k));
         }
     }
 
