@@ -114,8 +114,9 @@ public class Chomp implements Runnable, MouseListener {
     }
 
     public void run() {
-        threelist();
-        possibleboards(0,0,0);
+        MyPlayer yea = new MyPlayer();
+        yea.threelist();
+        yea.possibleboards(0,0,0);
         //for the moment we will loop things forever.
         while (true) {
             render();  // paint the graphics
@@ -123,80 +124,6 @@ public class Chomp implements Runnable, MouseListener {
 
         }
     }
-    public void threelist(){
-        System.out.println("3x3 boards:");
-        for (int i = 1; i<4; i = i+1) {
-            for (int m = 0;m<=i; m = m+1) {
-                for (int o = 0; o<=m; o = o+1) {
-                    System.out.println("");
-                    System.out.println("board:"+i+""+m+""+o); //add +return result
-                   int[] b3y3 = {i,m,o};
-                   boards.add(b3y3);
-                   possibleboards(i,m,o);
-                }
-            }
-        }
-        System.out.println("loseboards:");
-        for(int k=0; k<loseBoards.size();k=k+1){
-            System.out.println(loseBoards.get(k).A+""+loseBoards.get(k).B+""+loseBoards.get(k).C);
-        }
-//
-//to eliminate the if statement change the nested loops to addition and set the middle parameter to variable is <= previous variable
-
-    }
-
-    public void possibleboards(int A, int B, int C) {
-        // lose boards 3x3: 100,210,220,211,311
-        boolean wboard=false;
-        System.out.println("within board");
-        for (int c = C-1; c > -1; c = c - 1) {
-            int a = A;
-            int b = B;
-            System.out.println(a + "" + b + "" + c);
-              for(int l=0; l<loseBoards.size();l=l+1){
-                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
-                    System.out.println("(win)");
-                    wboard=true;
-                }}
-        }
-        for (int b = B-1;b>-1; b = b - 1) {
-            int a = A;
-            int c = C;
-            if (c > b) {
-                c = b;
-            }
-            System.out.println(a + "" + b + "" + c);
-            for(int l=0; l<loseBoards.size();l=l+1){
-                if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
-                    System.out.println("(win)");
-                    wboard=true;
-                }
-            }
-        }
-        for (int a = A-1; a > 0; a = a - 1) {
-            int b = B;
-            if ( b> a) {
-                b = a;}
-            int c = C;
-            if ( c> b) {
-                c = b;}
-            System.out.println(a + "" + b + "" + c);
-            for(int l=0; l<loseBoards.size();l=l+1) {
-                if (loseBoards.get(l).A == a && loseBoards.get(l).B == b && loseBoards.get(l).C == c) {
-                    System.out.println("(win)");
-                    wboard=true;
-                }
-
-                }
-            }
-
-        if (wboard==false) {
-            loseBoards.add(new Board(A,B,C));
-        }
-    }
-
-
-
 
     public void render() {
         Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();

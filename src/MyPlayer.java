@@ -101,6 +101,7 @@ public class MyPlayer {
          */
 
         Point myMove = new Point(row, column);
+
         return myMove;
     }
 
