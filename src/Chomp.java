@@ -115,6 +115,7 @@ public class Chomp implements Runnable, MouseListener {
 
     public void run() {
         threelist();
+        possibleboards(0,0,0);
         //for the moment we will loop things forever.
         while (true) {
             render();  // paint the graphics
@@ -123,11 +124,6 @@ public class Chomp implements Runnable, MouseListener {
         }
     }
     public void threelist(){
-        loseBoards.add(new Board(1,0,0));
-//        loseBoards.add(new Board(2,1,0));
-//        loseBoards.add(new Board(2,2,1));
-//        loseBoards.add(new Board(3,2,0));
-//        loseBoards.add(new Board(3,1,1));
         System.out.println("3x3 boards:");
         for (int i = 1; i<4; i = i+1) {
             for (int m = 0;m<=i; m = m+1) {
