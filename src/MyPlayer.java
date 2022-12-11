@@ -6,6 +6,7 @@ public class MyPlayer {
     public int[] columns;
     ArrayList<int[]> boards = new ArrayList<int[]>();
     ArrayList<Board> loseBoards = new ArrayList<Board>();
+    ArrayList<Board> correspondingBoards = new ArrayList<Board>();
 
     public MyPlayer() {
         columns = new int[10];
@@ -26,6 +27,7 @@ public class MyPlayer {
                     int[] b3y3 = {i,m,o};
                     boards.add(b3y3);
                     possibleboards(i,m,o);
+                    correspondingBoards.add(new Board(i,m,o));
                 }
             }
         }
@@ -81,7 +83,13 @@ public class MyPlayer {
         if (wboard==false) {
             loseBoards.add(new Board(A,B,C));
         }
+
+        if (wboard==true) {
+            correspondingBoards.add(new Board(A,B,C));
+        }
     }
+
+
 
     public Point move(Chip[][] pBoard) {
 
