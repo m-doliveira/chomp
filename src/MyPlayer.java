@@ -6,7 +6,7 @@ public class MyPlayer {
     public int[] columns;
     ArrayList<int[]> boards = new ArrayList<int[]>();
     ArrayList<Board> loseBoards = new ArrayList<Board>();
-    ArrayList<Board> correspondingBoards = new ArrayList<Board>();
+    ArrayList<Board> allBoards = new ArrayList<Board>();
 
     public MyPlayer() {
         columns = new int[10];
@@ -27,7 +27,7 @@ public class MyPlayer {
                     int[] b3y3 = {i,m,o};
                     boards.add(b3y3);
                     possibleboards(i,m,o);
-                    correspondingBoards.add(new Board(i,m,o));
+                    //correspondingBoards.add(new Board(i,m,o));
                 }
             }
         }
@@ -36,6 +36,7 @@ public class MyPlayer {
             System.out.println(loseBoards.get(k).A+""+loseBoards.get(k).B+""+loseBoards.get(k).C);
         }}
     public void possibleboards(int A, int B, int C) {
+        Board current = new Board(A,B,C);
         // lose boards 3x3: 100,210,220,211,311
         boolean wboard=false;
         System.out.println("within board");
@@ -75,6 +76,9 @@ public class MyPlayer {
                 if (loseBoards.get(l).A == a && loseBoards.get(l).B == b && loseBoards.get(l).C == c) {
                     System.out.println("(win)");
                     wboard=true;
+                    current.lba=a;
+                    current.lbb=b;
+                    current.lbc=c;
                 }
 
             }
@@ -85,7 +89,7 @@ public class MyPlayer {
         }
 
         if (wboard==true) {
-            correspondingBoards.add(new Board(A,B,C));
+           allBoards.add(current);
         }
     }
 

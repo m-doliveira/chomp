@@ -4,7 +4,9 @@ public class Board {
     public int A;
     public int B;
     public int C;
-    public boolean result =false;
+    public int lba;
+    public int lbb;
+    public int lbc;
 
     public Board(int pa, int pb, int pc){
         A=pa;
