@@ -91,6 +91,7 @@ public class MyPlayer {
         if (wboard==true) {
            allBoards.add(current);
         }
+
     }
 
 
@@ -102,6 +103,12 @@ public class MyPlayer {
         gameBoard = pBoard;
         int column = 0;
         int row = 0;
+        int j;
+        int y;
+        int p;
+        //math for coordinates
+        for (int x=0; x<allBoards.size(); x=x+1){
+        }
 
         row = 0;
         column = 1;
