@@ -94,8 +94,22 @@ public class MyPlayer {
 
     }
 
+public void calc(Board now){
+        if (now.A-now.lba>0) {
+            System.out.println("c:0" + "r:" + now.lba);
+        }
+        else{
+            if(now.B-now.lbb>0){
+                System.out.println("c:1"+"r:"+ now.lbb);
+            }
+            else{
+                if (now.B-now.lbb>0){
+                    System.out.println("c:2"+"r:"+ now.lbc);
+                }
+            }
+        }
 
-
+}
     public Point move(Chip[][] pBoard) {
 
         System.out.println("MyPlayer Move");
@@ -103,15 +117,17 @@ public class MyPlayer {
         gameBoard = pBoard;
         int column = 0;
         int row = 0;
-        int j;
-        int y;
-        int p;
-        //math for coordinates
-        for (int x=0; x<allBoards.size(); x=x+1){
-        }
-
+        int u=4;
+        int i;
+        int s;
         row = 0;
         column = 1;
+        //math for coordinates
+        for (int x=u; x<allBoards.size(); x=x+1){
+
+        }
+
+
 
         /***
          * This code will run each time the "MyPlayer" button is pressed.
