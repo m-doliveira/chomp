@@ -117,7 +117,7 @@ public class Chomp implements Runnable, MouseListener {
         MyPlayer yea = new MyPlayer();
         yea.threelist();
         yea.possibleboards(0, 0, 0);
-
+        
         //for the moment we will loop things forever.
         while (true) {
             render();  // paint the graphics

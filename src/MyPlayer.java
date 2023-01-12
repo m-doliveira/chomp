@@ -36,7 +36,7 @@ public class MyPlayer {
             System.out.println(loseBoards.get(k).A+""+loseBoards.get(k).B+""+loseBoards.get(k).C);
         }}
     public void possibleboards(int A, int B, int C) {
-        Board current = new Board(A,B,C);
+        Board current = new Board(A,B,C,3,3);
         // lose boards 3x3: 100,210,220,211,311
         boolean wboard=false;
         System.out.println("within board");
@@ -48,6 +48,9 @@ public class MyPlayer {
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
                     System.out.println("(win)");
                     wboard=true;
+                    current.lba=a;
+                    current.lbb=b;
+                    current.lbc=c;
                 }}
         }
         for (int b = B-1;b>-1; b = b - 1) {
@@ -61,6 +64,9 @@ public class MyPlayer {
                 if ( loseBoards.get(l).A==a && loseBoards.get(l).B==b&&loseBoards.get(l).C==c) {
                     System.out.println("(win)");
                     wboard=true;
+                    current.lba=a;
+                    current.lbb=b;
+                    current.lbc=c;
                 }
             }
         }
@@ -85,10 +91,11 @@ public class MyPlayer {
         }
 
         if (wboard==false) {
-            loseBoards.add(new Board(A,B,C));
+            loseBoards.add(new Board(A,B,C,3,3));
         }
 
         if (wboard==true) {
+            calc(current);
            allBoards.add(current);
         }
 
@@ -96,14 +103,17 @@ public class MyPlayer {
 
 public void calc(Board now){
         if (now.A-now.lba>0) {
+            now.row=now.lba;
             System.out.println("c:0" + "r:" + now.lba);
         }
         else{
             if(now.B-now.lbb>0){
+                now.row=now.lbb;
                 System.out.println("c:1"+"r:"+ now.lbb);
             }
             else{
                 if (now.B-now.lbb>0){
+                    now.row=now.lbc;
                     System.out.println("c:2"+"r:"+ now.lbc);
                 }
             }
@@ -117,15 +127,8 @@ public void calc(Board now){
         gameBoard = pBoard;
         int column = 0;
         int row = 0;
-        int u=4;
-        int i;
-        int s;
-        row = 0;
-        column = 1;
-        //math for coordinates
-        for (int x=u; x<allBoards.size(); x=x+1){
-
-        }
+        //using the coordinates form calc
+       // for (int x=u; x<allBoards.size(); x=x+1){}
 
 
 
