@@ -10,7 +10,7 @@ public class MyPlayer {
 
     public MyPlayer() {
         columns = new int[10];
-
+threelist();
         /***
          * This code will run just once, when the game opens.
          * Add your code here.
@@ -34,7 +34,8 @@ public class MyPlayer {
         System.out.println("loseboards:");
         for(int k=0; k<loseBoards.size();k=k+1){
             System.out.println(loseBoards.get(k).A+""+loseBoards.get(k).B+""+loseBoards.get(k).C);
-        }}
+        }
+    }
     public void possibleboards(int A, int B, int C) {
         Board current = new Board(A,B,C,3,3);
         // lose boards 3x3: 100,210,220,211,311
@@ -92,9 +93,12 @@ public class MyPlayer {
 
         if (wboard==false) {
             loseBoards.add(new Board(A,B,C,3,3));
+
+            //add lose board to all boards
         }
 
         if (wboard==true) {
+            System.out.println("pkejobvaeo");
             calc(current);
            allBoards.add(current);
         }
@@ -104,16 +108,19 @@ public class MyPlayer {
 public void calc(Board now){
         if (now.A-now.lba>0) {
             now.row=now.lba;
+            now.col=0;
             System.out.println("c:0" + "r:" + now.lba);
         }
         else{
             if(now.B-now.lbb>0){
                 now.row=now.lbb;
+                now.col=1;
                 System.out.println("c:1"+"r:"+ now.lbb);
             }
             else{
                 if (now.B-now.lbb>0){
                     now.row=now.lbc;
+                    now.col=2;
                     System.out.println("c:2"+"r:"+ now.lbc);
                 }
             }
@@ -125,8 +132,36 @@ public void calc(Board now){
         System.out.println("MyPlayer Move");
 
         gameBoard = pBoard;
-        int column = 0;
-        int row = 0;
+        int column = 1;
+        int row = 1 ;
+        int Ca=0;
+        int Cb=0;
+        int Cc=0;
+        for (int r=0; r< gameBoard.length; r++){
+            if (gameBoard[r][0].isAlive==true ){
+                Ca++;
+            }
+            if (gameBoard[r][1].isAlive==true){
+                Cb++;
+            }
+            if (gameBoard[r][2].isAlive==true){
+                Cc++;
+            }
+        }
+        System.out.println("curr"+Ca+""+Cb+""+Cc);
+        System.out.println(allBoards.size());
+        for(int y=0; y< allBoards.size(); y++){
+            System.out.println(allBoards.get(y).A +""+ allBoards.get(y).B+""+ allBoards.get(y).C);
+            if (Ca== allBoards.get(y).A && Cb== allBoards.get(y).B && Cc== allBoards.get(y).C){
+
+                System.out.println("found");
+                System.out.println("r: " + allBoards.get(y).row+"c: "+allBoards.get(y).col);
+
+                column= allBoards.get(y).col;
+                row=allBoards.get(y).row;
+                System.out.println("row: " + row+"col: "+column);
+            }
+        }
         //using the coordinates form calc
        // for (int x=u; x<allBoards.size(); x=x+1){}
 
